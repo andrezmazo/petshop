@@ -1,0 +1,57 @@
+@import url("./global.css");
+
+.contenedor{
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 6px 3px rgba(68, 68, 68, 0.3);
+    display: flex;
+    overflow: hidden;
+    flex-wrap: wrap;
+    height: 80vh;
+    align-content: center;
+    justify-content: center;
+    width: 70vw;
+    margin: auto;
+    margin-bottom: 15px;
+}
+.contenedorTexto{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;  
+    align-items: center;
+    justify-items: center ;
+}
+.contenedorImg > img{
+    align-items: center;
+    justify-content: center;
+    width:30vw ;
+
+    object-fit: contain;
+}
+.botonRegresar{
+    background-color: var(--magenta);
+    border: 1px solid var(--magenta);
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    padding: 5px;
+    margin-top: 30px;
+  }
+h2{
+    font-size: 5rem;
+    font-weight: 800;
+    color: var(--grisOscuro);
+}
+
+@media (max-width: 769px) {
+    h2{
+        font-size: 2rem;
+    }
+    h3{
+        font-size: 1rem;
+        margin-left: 30px;
+        margin-right: 30px;
+        text-align: center;
+    }
+    
+}

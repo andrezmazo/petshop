@@ -1,0 +1,136 @@
+@import url("./global.css");
+
+body {
+  text-align: center;
+  justify-content: center;
+}
+
+.perfilUsuario-wrapper {
+  display: flex;
+  justify-content: center;
+  min-height: 80vh;
+  padding: 0 1%;
+  margin-bottom: 50px;
+  max-width: 100vw;
+  width: 100%;
+  flex-direction: column;
+}
+
+.contenedor-section {
+  width: 90%;
+  align-self: center;
+  display: flex;
+  justify-content: center;
+}
+.mainFoto {
+  border-radius: 50%;
+  text-align: center;
+  aspect-ratio: 1/1;
+  min-height: 150px;
+  min-width: 150px;
+  max-width: 250px;
+  max-height: 250px;
+  background-color: black;
+  object-fit: cover;
+}
+
+.barraInput {
+  font-size: 1rem;
+  color: var(--grisOscuro);
+  padding: 15px;
+  border-radius: 5px;
+  border: white solid 0.2px;
+  margin-top: 15px;
+  width: 100%;
+  border: 2px solid var(--grisOscuro);
+  margin-bottom: 10px;
+}
+
+.linea-color {
+  background-color: var(--naranja2);
+  width: 35%;
+  min-height: 560px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#nombre-id {
+  font-weight: 800;
+  font-size: 30px;
+  color: white;
+}
+
+#nombre-id-edicion {
+  font-weight: 800;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: white;
+}
+
+.info-adicional {
+  width: 65%;
+  padding: 2%;
+}
+.tarjeta-usuario {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  width: 80%;
+  border-radius: 15px;
+  background-color: white;
+  box-shadow: 2px 4px 22px -6px #000000;
+  flex-direction: row;
+  min-height: 560px;
+  position: relative;
+  overflow: hidden;
+}
+.tituloUsuario {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  width: 100%;
+  text-align: center;
+}
+.parrafoUsuario {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  margin: 15px;
+}
+.parrafoBoldUsuario {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  font-weight: 600;
+}
+
+.contenedor-parrafo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.info-titulo {
+  width: 100%;
+  font-family: "Montserrat", sans-serif;
+  font-size: 30px;
+  font-weight: 800;
+  margin-bottom: 40px;
+}
+
+.botonEditar {
+  background-color: var(--grisOscuro);
+  text-align: center;
+  border-radius: 5px;
+  border: solid 0.2px white;
+  color: #fff;
+  font-size: 1.5rem;
+  margin-top: 5vh;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 10px;
+  width: 100%;
+}

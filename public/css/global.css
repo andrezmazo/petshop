@@ -1,0 +1,175 @@
+/* Variables, para usar en sus archivos de estilos agreguen @import url("./global.css") en la primera linea */
+
+:root {
+  --gris: #f2f2f2;
+  --grisOscuro: #a6a6a6;
+  --magenta: #f53049;
+  --naranja1: #f29f05;
+  --naranja2: #f2a341;
+  --naranja3: #f5bd46;
+  --negro: #292929;
+  --footerHeight: 10vh;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  min-width: 100vh - var(--footerHeight);
+}
+
+.buscador {
+  margin-right: 5px;
+  position: relative;
+  width: 50%;
+}
+.buscador button {
+  background: var(--magenta);
+  border: none;
+  cursor: pointer;
+  color: white;
+  height: 100%;
+  font: inherit;
+  font-size: 12px;
+  padding: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 25%;
+}
+.buscador button:hover {
+  background: var(--grisOscuro);
+}
+.buscador input {
+  width: 100%;
+}
+
+.buscador-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 800px;
+}
+
+body {
+  background-color: var(--gris);
+  color: var(--negro);
+  font-family: "Montserrat", sans-serif;
+  font-family: "Roboto", sans-serif;
+}
+
+footer {
+  align-items: center;
+  background-color: var(--negro);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  height: var(--footerHeight);
+  justify-content: center;
+  padding: 1rem 0;
+  width: 100%;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+  font-weight: 800;
+}
+
+header {
+  background-color: var(--naranja2);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-family: "Montserrat", sans-serif;
+  height: 10vh;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+#admin {
+  background-color: var(--negro);
+}
+
+.headerSuperior {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  height: 80%;
+  padding: 0 2%;
+}
+
+.headerInferior {
+  background-color: var(--magenta);
+  color: white;
+  display: flex;
+  height: 30%;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.headerInferior p {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+header nav {
+  width: 100%;
+}
+
+header p {
+  color: white;
+  font-weight: 800;
+  font-size: 32px;
+}
+
+header nav > a {
+  color: white;
+  margin: 0 3px;
+  text-decoration: none;
+}
+
+header nav > a:hover {
+  color: var(--gris);
+  font-weight: 800;
+}
+
+section {
+  margin: 20px 0;
+}
+
+@media (max-width: 769px) {
+  .buscador {
+    margin: 10px 0;
+    width: 75%;
+  }
+  .buscador-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+  }
+  header {
+    max-width: 100vh;
+    height: 15vh;
+  }
+  .headerInferior {
+    display: none;
+  }
+  .headerSuperior {
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+
+h2 {
+  font-size: 36px;
+  margin: 20px 0;
+}

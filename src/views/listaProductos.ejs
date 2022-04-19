@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/global.css" />
+    <link rel="stylesheet" href="/css/listaProductos.css" />
+
+    <title>Inventario de productos</title>
+  </head>
+  <body style="align-self: center">
+    <%- include('../partials/header') %>
+    <div class="listaProductos-wrapper">
+      <h2>Crear Nuevo Producto</h2>
+      <section>
+        <div class="formulario-creacion">
+          <form method="POST" action="/listaProductos/crear">
+            <div class="campos-formulario">
+              <div>
+                <label for="id">ID</label>
+                <input
+                  type="number"
+                  name="id"
+                  readonly
+                  value="<%=idCreacion%>"
+                  id="id"
+                />
+                <label for="descripcion">Descripción</label>
+                <textarea name="descripcion" id="descripcion"></textarea>
+              </div>
+              <div>
+                <label for="nombre">Nombre</label>
+                <input type="text" name="nombre" id="nombre" />
+
+                <label for="tipo">Tipo de producto</label>
+                <select name="tipo" id="tipo">
+                  <option value="1">alimento</option>
+                  <option value="2">juguete</option>
+                </select>
+                <input
+                  class="crear-boton no-mobile"
+                  type="submit"
+                  value="Crear Producto"
+                />
+              </div>
+              <div>
+                <label for="precio">Precio</label>
+                <input type="number" name="precio" id="precio" />
+                <label for="imagen">Archivo imagen</label>
+                <select name="imagen" id="imagen">
+                  <% for(let opcion in archivosImagen){ %>
+                  <option value="<%=archivosImagen[opcion]%>">
+                    <%=archivosImagen[opcion]%>
+                  </option>
+                  <%} %>
+                </select>
+                <input
+                  class="no-desktop crear-boton"
+                  type="submit"
+                  value="Crear Producto"
+                />
+                <button class="no-mobile">Limpiar Campos</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+      <h2>Lista de Productos</h2>
+      <section>
+        <table>
+          <thead>
+            <td>id</td>
+            <td>Nombre</td>
+            <td>Precio</td>
+            <td class="no-mobile" width="30%">Descripción</td>
+            <td>Tipo</td>
+            <td class="no-mobile">Archivo Imagen</td>
+            <td class="no-mobile"></td>
+          </thead>
+          <tbody>
+            <% for(let producto of listaProductos){ %>
+            <tr>
+              <td class="negrita idProducto"><%=producto.id%></td>
+              <td><%=producto.nombre%></td>
+              <td class="negrita">$<%=producto.precio%></td>
+              <td class="descripcion no-mobile"><%=producto.descripcion%></td>
+              <td><%=producto.tipo.nombre%></td>
+              <td class="no-mobile"><%=producto.imagen%></td>
+              <td class="botones no-mobile" width="120">
+                <form action="/listaProductos/<%=producto.id%>/editar/">
+                  <button type="submit" class="editar">Editar</button>
+                </form>
+                <form
+                  method="POST"
+                  action="/listaProductos/<%=producto.id%>/eliminar?_method=DELETE"
+                >
+                  <button type="submit" class="eliminar">Eliminar</button>
+                </form>
+              </td>
+            </tr>
+            <tr class="no-desktop no-desktop-tr">
+              <td
+                class="no-desktop botones botones-mobile"
+                width="100%"
+                colspan="7"
+              >
+                <div class="botones-wrapper">
+                  <form action="/listaProductos/<%=producto.id%>/editar/">
+                    <button type="submit" class="editar">Editar</button>
+                  </form>
+                  <form
+                    method="POST"
+                    action="/listaProductos/<%=producto.id%>/eliminar?_method=DELETE"
+                  >
+                    <button type="submit" class="eliminar">Eliminar</button>
+                  </form>
+                </div>
+              </td>
+            </tr>
+            <%} %>
+          </tbody>
+        </table>
+      </section>
+    </div>
+    <%- include('../partials/footer') %>
+  </body>
+</html>

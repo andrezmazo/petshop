@@ -1,0 +1,43 @@
+<header>
+  <%if(locals.hayUsuarioLoggeado && locals.infoUsuarioLoggeado.admin){%>
+  <div class="headerSuperior" id="admin">
+    <%} else {%>
+      <div class="headerSuperior">
+      <%}%>
+    <p>PetShop Grupo 7</p>
+    <div class="buscador-nav">
+      <div class="buscador">
+        <input class="buscador"
+          name="buscador-header"
+          placeholder="Qué quieres buscar hoy?"
+          type="search"
+        />
+        <button type="button">Buscar</button>
+      </div>
+      <nav>
+        <a href="/">Home</a>
+        <% if(locals.hayUsuarioLoggeado){%>
+        <a href="/userProfile">Perfil</a>
+        <a href="/productCart">Carrito</a>
+        <%if(locals.infoUsuarioLoggeado.admin){%>
+        <a href="/listaProductos">Inventario</a>
+        <a href="/listaUsuarios">Directorio</a>
+        <%}%>
+        <a href="/logout">Salir</a>
+        <%} else {%>
+        <a href="/login">Ingreso</a>
+        <a href="/register">Registro</a>
+        <%}%>
+      </nav>
+    </div>
+  </div>
+  <div class="headerInferior">
+    <p>Promociones</p>
+    <p>Servicios</p>
+    <p>Alimentos</p>
+    <p>Snacks</p>
+    <p>Cuidados</p>
+    <p>Juguetes</p>
+    <p>Farmacia</p>
+  </div>
+</header>

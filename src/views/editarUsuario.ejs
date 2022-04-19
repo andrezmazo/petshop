@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/global.css" />
+    <link rel="stylesheet" href="/css/userProfile.css" />
+
+    <title>Edicion de Usuario</title>
+  </head>
+  <body>
+    <%- include('../partials/header') %>
+    <form
+      method="post"
+      action="/userProfile/<%=infoUsuario.id%>/editar?_method=PUT"
+      enctype="multipart/form-data"
+    >
+      <div class="perfilUsuario-wrapper">
+        <section class="contenedor-section">
+          <div class="tarjeta-usuario">
+            <div class="linea-color">
+              <img
+                class="mainFoto"
+                src="/img/users/<%=infoUsuario.foto%>"
+                alt="Foto de Perfil"
+              />
+              <input type="file" id="foto" name="foto" />
+              <div class="contenedor-parrafo1">
+                <div id="nombre-id-edicion">
+                  <p class="parrafoUsuario"><%=infoUsuario.id%>.</p>
+                  <input
+                    type="text"
+                    name="nombre"
+                    value="<%=infoUsuario.nombre%>"
+                    class="barraInput"
+                  />
+                </div>
+                <% if(locals.errors && errors.nombre){%>
+                <div style="color: red"><%= errors.nombre.msg %></div>
+                <%}%>
+                <p class="parrafoUsuario"><%=infoUsuario.email%></p>
+              </div>
+            </div>
+            <div class="info-adicional">
+              <div class="info-titulo">
+                <p>Información General</p>
+              </div>
+              <div class="contenedor-parrafo">
+                <p class="parrafoBoldUsuario">Fecha de Nacimiento:</p>
+                <input
+                  class="barraInput"
+                  type="date"
+                  name="fecha"
+                  id="fecha"
+                  value="<%= infoUsuario.fecha%>"
+                  minlength=" 2"
+                />
+                <% if(locals.errors && errors.fecha){%>
+                <div style="color: red"><%= errors.fecha.msg %></div>
+                <%}%>
+              </div>
+              <div class="contenedor-parrafo">
+                <p class="parrafoBoldUsuario">Pais:</p>
+                <select class="barraInput" name="pais" id="pais">
+                  <option value="colombia">Colombia</option>
+                  <option value="argentina">Argentina</option>
+                </select>
+              </div>
+              <div class="contenedor-parrafo">
+                <p class="parrafoBoldUsuario">Ciudad:</p>
+                <select class="barraInput" name="ciudad" id="ciudad">
+                  <option value="medellin">Medellín</option>
+                  <option value="buenos_aires">Buenos Aires</option>
+                </select>
+              </div>
+              <div class="contenedor-parrafo">
+                <p class="parrafoBoldUsuario">Direccion:</p>
+                <input
+                  class="barraInput"
+                  type="text"
+                  name="direccion"
+                  id="direccion"
+                  minlength=" 2"
+                  value="<%= infoUsuario.direccion%>"
+                  placeholder="Direccion"
+                />
+                <% if(locals.errors && errors.direccion){%>
+                <div style="color: red"><%= errors.direccion.msg %></div>
+                <%}%>
+              </div>
+              <div class="contenedor-parrafo">
+                <p class="parrafoBoldUsuario">Tipo:</p>
+                <select class="barraInput" name="admin">
+                  <option value="true">Administrador</option>
+                  <option value="false">Usuario</option>
+                </select>
+              </div>
+              <div class="contenedor-parrafo">
+                <p class="parrafoBoldUsuario">Autorización de Contenido:</p>
+                <select class="barraInput" name="autoriza" id="autoriza">
+                  <option value="true">Si</option>
+                  <option value="false">No</option>
+                </select>
+              </div>
+              <div>
+                <button class="botonEditar" type="submit" class="editar">
+                  Guardar Cambios
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </form>
+    <%- include('../partials/footer') %>
+  </body>
+</html>

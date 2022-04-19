@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/global.css" />
+    <link rel="stylesheet" href="/css/productDetail.css" />
+    <script src="prueba"></script>
+
+    <title>Detalle de Producto</title>
+  </head>
+  <body style="align-self: center">
+    <%- include('../partials/header') %>
+    <section class="mainSection">
+      <div class="mainFoto">
+        <div class="contenedor-foto">
+          <img
+            src="/img/<%=productoADetalle.imagen%>"
+            alt="Juguete"
+            class="imgMain"
+          />
+        </div>
+        <div class="imgVistas">
+          <img src="/img/juguetePerro6.png" alt="Juguete" class="imgVista" />
+          <img src="/img/juguetePerro5.jpg" alt="Juguete" class="imgVista" />
+          <img src="/img/juguetePerro7.jpg" alt="Juguete" class="imgVista" />
+        </div>
+      </div>
+
+      <div class="mainArticle">
+        <h2 class="tituloProducto"><%=productoADetalle.nombre%></h2>
+        <div></div>
+        <div class="precio-disponibilidad">
+          <p class="priceMain">$<%=productoADetalle.precio%></p>
+        </div>
+        <div class="precio-disponibilidad">
+          <p class="disponible">Producto disponible</p>
+        </div>
+        <div class="descripcionMain"><%=productoADetalle.descripcion%></div>
+        <div class="cajaColores">
+          <p class="color">Color/Tipo</p>
+
+          <button type="button" class="circulo1" name="color1"></button>
+          <button type="button" class="circulo2" name="color2"></button>
+          <button type="button" class="circulo3" name="color2"></button>
+        </div>
+
+        <div class="anadirCaja">
+          <button
+            type="button"
+            class="botonAnadirGrande"
+            onclick="window.location.href='/productCart'"
+          >
+            Añadir al carrito
+          </button>
+
+          <button type="button" class="menosUno boton-menos">-</button>
+          <input type="number" name="cantidad" class="cantidad" />
+          <button type="button" class="masUno boton-mas">+</button>
+        </div>
+        <div class="botonCarrito"></div>
+      </div>
+    </section>
+    <div>
+      <h2>Productos Similares</h2>
+      <section>
+        <div class="wrapper-productos">
+          <% for(let producto of productosSimilares){ %>
+          <article class="carta-producto">
+            <div class="imagen-producto">
+              <img src="/img/<%=producto.imagen%>" alt="Perro de juguete" />
+            </div>
+            <div class="info-producto">
+              <p class="nombre-producto"><%=producto.nombre%></p>
+              <p class="precio-producto">$<%=producto.precio%></p>
+              <div class="detalles-agregar">
+                <button
+                  class="mas-detalles"
+                  onclick="window.location.href='/productDetail/<%=producto.id%>'"
+                >
+                  Más Detalles
+                </button>
+                <div class="agregar">
+                  <div class="botones-agregar">
+                    <button class="boton-menos">-</button>
+                    <p>Agregar</p>
+                    <button class="boton-mas">+</button>
+                  </div>
+                  <div class="cantidad-agregada">
+                    <p class="num">1</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="boton-comprar">
+              <button onclick="window.location.href='/productCart'">
+                Comprar
+              </button>
+            </div>
+          </article>
+          <%} %>
+        </div>
+      </section>
+    </div>
+    <%- include('../partials/footer') %>
+  </body>
+</html>
+<script src="./events/searchBar.js"></script>
+<script src="./events/carrito.js"></script>

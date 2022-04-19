@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/global.css" />
+    <link rel="stylesheet" href="/css/listaUsuarios.css" />
+
+    <title>Lista de usuarios</title>
+  </head>
+  <body style="align-self: center">
+    <%- include('../partials/header') %>
+    <div class="listaUsuarios-wrapper">
+      <h2>Crear Nuevo Usuario</h2>
+      <section>
+        <div class="formulario-creacion">
+          <form
+            method="POST"
+            action="/listaUsuarios/crear"
+            enctype="multipart/form-data"
+          >
+            <div class="campos-formulario">
+              <div>
+                <label for="nombre">Nombre</label>
+                <input type="text" name="nombre" id="nombre" />
+                <% if(locals.errors && errors.nombre){%>
+                <div style="color: red"><%= errors.nombre.msg %></div>
+                <%}%>
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" />
+                <% if(locals.errors && errors.email){%>
+                <div style="color: red"><%= errors.email.msg %></div>
+                <%}%>
+                <label for="fecha">Fecha De Nacimiento</label>
+                <input type="date" name="fecha" id="fecha" />
+                <% if(locals.errors && errors.fecha){%>
+                <div style="color: red"><%= errors.fecha.msg %></div>
+                <%}%>
+              </div>
+              <div>
+                <label for="pais">Pais</label>
+                <select name="pais" id="pais">
+                  <option value="colombia">Colombia</option>
+                  <option value="argentina">Argentina</option>
+                </select>
+                <% if(locals.errors && errors.pais){%>
+                <div style="color: red"><%= errors.pais.msg %></div>
+                <%}%>
+                <label for="ciudad">Ciudad</label>
+                <select name="ciudad" id="ciudad">
+                  <option value="colombia">Medellín</option>
+                  <option value="buenos_aires">Buenos Aires</option>
+                </select>
+                <% if(locals.errors && errors.ciudad){%>
+                <div style="color: red"><%= errors.ciudad.msg %></div>
+                <%}%>
+                <label for="direccion">Direccion</label>
+                <input type="text" name="direccion" id="direccion" />
+                <% if(locals.errors && errors.direccion){%>
+                <div style="color: red"><%= errors.direccion.msg %></div>
+                <%}%>
+                <label>Autorizacion</label>
+                <label class="autorizacion"
+                  ><input
+                    class="checkbox"
+                    type="checkbox"
+                    name="autorizacion"
+                    id="autorizacion"
+                  />
+                  Envio de Contenido</label
+                >
+              </div>
+              <div>
+                <label for="foto">Archivo Foto</label>
+                <input type="file" name="foto" id="foto" />
+                <label for="tipo">Tipo de usuario</label>
+                <select name="tipo" id="tipo">
+                  <option value="administrador">Administrador</option>
+                  <option value="usuario">Usuario</option>
+                </select>
+                <label for="contrasena">Contrasena</label>
+                <input type="password" name="contrasena" id="contrasena" />
+                <% if(locals.errors && errors.contrasena){%>
+                <div style="color: red"><%= errors.contrasena.msg %></div>
+                <%}%>
+                <input
+                  class="no-desktop crear-boton"
+                  type="submit"
+                  value="Crear Usuario"
+                />
+                <input
+                  class="crear-boton no-mobile"
+                  type="submit"
+                  value="Crear Usuario"
+                />
+                <input
+                  type="reset"
+                  class="eliminar crear-boton"
+                  value="Limpiar Campos"
+                />
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+      <h2>Lista de Usuarios</h2>
+      <section>
+        <table>
+          <thead>
+            <td>ID</td>
+            <td>Nombre</td>
+            <td>Email</td>
+            <td>Fecha de Nacimiento</td>
+            <td>Pais</td>
+            <td>Ciudad</td>
+            <td>Direccion</td>
+            <td class="no-mobile">Archivo Imagen</td>
+            <td>Autorizacion</td>
+            <td>Tipo</td>
+            <td>Perfil</td>
+            <td class="no-mobile"></td>
+          </thead>
+          <tbody>
+            <% for(let usuario of listaUsuarios){ %>
+            <tr>
+              <td class="negrita idUsuario"><%=usuario.id%></td>
+              <td><%=usuario.nombre%></td>
+              <td class="negrita"><%=usuario.email%></td>
+              <td><%=usuario.fecha%></td>
+              <td><%=usuario.pais%></td>
+              <td><%=usuario.ciudad%></td>
+              <td><%=usuario.direccion%></td>
+              <td class="no-mobile"><%=usuario.foto%></td>
+              <td class="negrita"><%=usuario.autorizacion ? "Sí" : "No"%></td>
+              <td lass="negrita"><%=usuario.admin ? "Admin" : "Usuario"%></td>
+              <td>
+                <a href="/userProfile/<%=usuario.id%>"
+                  ><img
+                    class="iconoPerfil"
+                    src="img/assets/iconoPerfil.svg"
+                    alt=""
+                /></a>
+              </td>
+              <% if(locals.infoUsuarioLoggeado.id !== usuario.id){%>
+              <td class="botones no-mobile" width="120">
+                <form action="/listaUsuarios/<%=usuario.id%>/editar/">
+                  <button type="submit" class="editar">Editar</button>
+                </form>
+                <form
+                  method="POST"
+                  action="/listaUsuarios/<%=usuario.id%>/eliminar?_method=DELETE"
+                >
+                  <button type="submit" class="eliminar">Eliminar</button>
+                </form>
+              </td>
+            </tr>
+            <%} else{%>
+            <td class="botones no-mobile" width="120"></td>
+            <%} %> <% if(locals.infoUsuarioLoggeado.id !== usuario.id){%>
+            <tr class="no-desktop no-desktop-tr">
+              <td
+                class="no-desktop botones botones-mobile"
+                width="100%"
+                colspan="13"
+              >
+                <div class="botones-wrapper">
+                  <form action="/listaUsuarios/<%=usuario.id%>/editar/">
+                    <button type="submit" class="editar">Editar</button>
+                  </form>
+                  <form
+                    method="POST"
+                    action="/listaUsuarios/<%=usuario.id%>/eliminar?_method=DELETE"
+                  >
+                    <button type="submit" class="eliminar">Eliminar</button>
+                  </form>
+                </div>
+              </td>
+            </tr>
+            <%} else{%>
+            <tr class="no-desktop no-desktop-tr"></tr>
+            <%} %> <%} %>
+          </tbody>
+        </table>
+      </section>
+    </div>
+    <%- include('../partials/footer') %>
+  </body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/global.css" />
+    <link rel="stylesheet" href="/css/register.css" />
+    <title>Registrarse</title>
+  </head>
+  <body>
+    <%- include('../partials/header') %>
+    <div class="register-wrapper">
+      <div class="cajaRegister">
+        <form
+          action="/userProfile/crear"
+          method="POST"
+          enctype="multipart/form-data"
+        >
+          <p class="tituloRegister" for="registrarse">Crea tu Cuenta</p>
+          <input
+            class="barraInput"
+            type="text"
+            name="nombre"
+            id="nombre"
+            minlength=" 2"
+            placeholder="Nombre y Apellido"
+            value="<%= locals.old && old.nombre%>"
+          />
+          <% if(locals.errors && errors.nombre){%>
+          <div style="color: red"><%= errors.nombre.msg %></div>
+          <%}%>
+          <input
+            class="barraInput"
+            type="email"
+            name="email"
+            id="email"
+            minlength=" 2"
+            placeholder="Correo Electronico"
+            value="<%= locals.old && old.email %>"
+          />
+          <% if(locals.errors && errors.email){%>
+          <div style="color: red"><%= errors.email.msg %></div>
+          <%}%>
+          <p class="tituloRegister" for="dateB">Fecha de nacimiento</p>
+          <input
+            class="barraInput"
+            type="date"
+            name="fecha"
+            id="fecha"
+            minlength=" 2"
+            value="<%= locals.old && old.fecha %>"
+          />
+          <% if(locals.errors && errors.fecha){%>
+          <div style="color: red"><%= errors.fecha.msg %></div>
+          <%}%>
+          <p class="tituloRegister">Ubicación</p>
+
+          <select class="barraInput" name="pais" id="pais">
+            <option value="colombia">Colombia</option>
+            <option value="argentina">Argentina</option>
+          </select>
+          <% if(locals.errors && errors.pais){%>
+          <div style="color: red"><%= errors.pais.msg %></div>
+          <%}%>
+          <select class="barraInput" name="ciudad" id="ciudad">
+            <option value="colombia">Medellín</option>
+            <option value="buenos_aires">Buenos Aires</option>
+          </select>
+          <% if(locals.errors && errors.ciudad){%>
+          <div style="color: red"><%= errors.ciudad.msg %></div>
+          <%}%>
+          <input
+            class="barraInput"
+            type="text"
+            name="direccion"
+            id="direccion"
+            minlength=" 2"
+            value="<%= locals.old && old.direccion %>"
+            placeholder="Direccion"
+          />
+          <% if(locals.errors && errors.direccion){%>
+          <div style="color: red"><%= errors.direccion.msg %></div>
+          <%}%>
+          <p class="tituloRegister" for="autorizacionTextp">
+            Autorización de contenido
+          </p>
+          <div style="width: 80%">
+            <input type="checkbox" name="autorizacion" id="autorizacion" />
+            <label
+              class="textoPequeno"
+              for="autorizacion "
+              style="flex-wrap: wrap"
+            >
+              ¿Deseas recibir contenido de promociones y novedades de nuestra
+              tienda?
+            </label>
+          </div>
+          <p class="tituloRegister" for="fotoDeUsuario">Foto de usuario</p>
+          <input
+            class="barraInput"
+            type="file"
+            src=""
+            alt="Enviar"
+            name="foto"
+            id="foto"
+            value="<%= locals.old && old.foto %>"
+          />
+          <input
+            class="barraInput"
+            type="password"
+            name="contrasena"
+            id="contrasena"
+            minlength=" 2"
+            placeholder="Contraseña"
+          />
+          <% if(locals.errors && errors.contrasena){%>
+          <div style="color: red"><%= errors.contrasena.msg %></div>
+          <%}%>
+          <input class="enviarLogin" type="submit" value="Crear Usuario" />
+          <input class="enviarLogin" type="reset" value="Borrar Datos" />
+        </form>
+      </div>
+    </div>
+    <%- include('../partials/footer') %>
+  </body>
+</html>

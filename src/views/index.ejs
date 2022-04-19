@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/global.css" />
+    <link rel="stylesheet" href="/css/home.css" />
+
+    <title>PetShop Grupo 7</title>
+  </head>
+  <body>
+    <%- include('../partials/header') %>
+    <div class="banner">
+      <img src="img/perroHome.png" alt="" />
+      <div class="slogan">
+        <h3>
+          Porque ellos merecen...<br />
+          lo mejor y lo más bonito, a los mejores precios
+        </h3>
+        <h1>PetShop Grupo 7</h1>
+        <button><p>Conoce mas</p></button>
+      </div>
+    </div>
+    <div class="index-wrapper">
+      <!-- <section id="productos-destacados">
+        <div class="pd-slider">PRODUCTOS DESTACADOS</div>
+      </section> -->
+      <section id="alimentos">
+        <h2>Alimentos</h2>
+        <div class="wrapper-productos">
+          <% for(let alimento of alimentos){ %>
+          <article class="carta-producto">
+            <div class="imagen-producto">
+              <img src="img/<%=alimento.imagen%>" alt="alimento" />
+            </div>
+            <div class="info-producto">
+              <p class="nombre-producto"><%=alimento.nombre%></p>
+              <p class="precio-producto">$<%=alimento.precio%></p>
+              <div class="detalles-agregar">
+                <button
+                  class="mas-detalles"
+                  onclick="window.location.href='/productDetail/<%=alimento.id%>'"
+                >
+                  Más Detalles
+                </button>
+                <div class="agregar">
+                  <div class="botones-agregar">
+                    <button class="boton-menos" id="menos<%=alimento.id%>">
+                      -
+                    </button>
+                    <p>Agregar</p>
+                    <button class="boton-mas" id="mas<%=alimento.id%>">
+                      +
+                    </button>
+                  </div>
+                  <div class="cantidad-agregada">
+                    <p id="num<%=alimento.id%>" class="num">1</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="boton-comprar">
+              <button class="comprar" id="<%=alimento.id%>">Comprar</button>
+            </div>
+          </article>
+          <%} %>
+        </div>
+      </section>
+      <section id="juguetes">
+        <h2>Juguetes</h2>
+        <div class="wrapper-productos">
+          <% for(let juguete of juguetes){ %>
+          <article class="carta-producto">
+            <div class="imagen-producto">
+              <img src="img/<%=juguete.imagen%>" alt="juguete" />
+            </div>
+            <div class="info-producto">
+              <p class="nombre-producto"><%=juguete.nombre%></p>
+              <p class="precio-producto">$<%=juguete.precio%></p>
+              <div class="detalles-agregar">
+                <button
+                  class="mas-detalles"
+                  onclick="window.location.href='/productDetail/<%=juguete.id%>'"
+                >
+                  Más Detalles
+                </button>
+                <div class="agregar">
+                  <div class="botones-agregar">
+                    <button class="boton-menos" id="menos<%=juguete.id%>">
+                      -
+                    </button>
+                    <p>Agregar</p>
+                    <button class="boton-mas" id="mas<%=juguete.id%>">+</button>
+                  </div>
+                  <div class="cantidad-agregada">
+                    <p id="num<%=juguete.id%>" class="num">1</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="boton-comprar">
+              <button
+                id="<%=juguete.id%>"
+                class="comprar"
+                onclick="window.location.href='/productCart'"
+              >
+                Comprar
+              </button>
+            </div>
+          </article>
+          <%} %>
+        </div>
+      </section>
+    </div>
+    <button class="botoncito" id="prueba" onclick="seleccionar(1)">
+      prueba
+    </button>
+    <button class="botoncito" id="prueba2" onclick="seleccionar(2)">
+      prueba
+    </button>
+    <br />
+    <button class="botoncito2" id="p1">prueba</button>
+    <button class="botoncito2" id="p2">prueba</button>
+    <h1><%=numPro%></h1>
+    <%- include('../partials/footer') %>
+  </body>
+</html>
+<script src="./events/searchBar.js"></script>
+<script src="./events/carrito.js"></script>

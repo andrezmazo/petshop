@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/productCart.css" />
+    <link rel="stylesheet" href="css/global.css" />
+    <title>Carrito</title>
+  </head>
+  <body>
+    <%- include('../partials/header') %>
+    <div class="carrito-wrapper">
+      <h2>Carrito de compras</h2>
+      <section>
+        <div class="contenedor">
+          <article class="detalles-producto">
+            <div class="imagen-producto">
+              <img
+                src="/img/juguetePerro5.jpg"
+                alt="Juguete"
+                class="imgVista"
+              />
+            </div>
+            <div class="informacion">
+              <p class="nombre-producto">Nombre del Producto</p>
+              <p class="descripcion-producto">Descripción del producto</p>
+              <p>Tipo de envio</p>
+              <p>CANTIDAD: 1</p>
+            </div>
+            <div class="precio-producto">
+              <p>$70.000</p>
+            </div>
+          </article>
+          <article class="detalles-producto">
+            <div class="imagen-producto">
+              <img
+                src="/img/juguetePerro3.jpg"
+                alt="Juguete"
+                class="imgVista"
+              />
+            </div>
+            <div class="informacion">
+              <p class="nombre-producto">Nombre del Producto</p>
+              <p class="descripcion-producto">Descripción del producto</p>
+              <p>Tipo de envio</p>
+              <p>CANTIDAD: 1</p>
+            </div>
+            <div class="precio-producto">
+              <p>$70.000</p>
+            </div>
+          </article>
+          <article class="detalles-producto">
+            <div class="imagen-producto">
+              <img
+                src="/img/juguetePerro6.png"
+                alt="Juguete"
+                class="imgVista"
+              />
+            </div>
+            <div class="informacion">
+              <p class="nombre-producto">Nombre del Producto</p>
+              <p class="descripcion-producto">Descripción del producto</p>
+              <p>Tipo de envio</p>
+              <p>CANTIDAD: 1</p>
+            </div>
+            <div class="precio-producto">
+              <p>$70.000</p>
+            </div>
+          </article>
+          <article class="detalles-producto">
+            <div class="imagen-producto">
+              <img
+                src="/img/juguetePerro2.jpg"
+                alt="Juguete"
+                class="imgVista"
+              />
+            </div>
+            <div class="informacion">
+              <p class="nombre-producto">Nombre del Producto</p>
+              <p class="descripcion-producto">Descripción del producto</p>
+              <p>Tipo de envio</p>
+              <p>CANTIDAD: 1</p>
+            </div>
+            <div class="precio-producto">
+              <p>$70.000</p>
+            </div>
+          </article>
+          <article class="detalles-producto">
+            <div class="imagen-producto">
+              <img src="/img/juguetePerro.jpg" alt="Juguete" class="imgVista" />
+            </div>
+            <div class="informacion">
+              <p class="nombre-producto">Nombre del Producto</p>
+              <p class="descripcion-producto">Descripción del producto</p>
+              <p>Tipo de envio</p>
+              <p>CANTIDAD: 1</p>
+            </div>
+            <div class="precio-producto">
+              <p>$70.000</p>
+            </div>
+          </article>
+          <article class="confirmacion-compra">
+            <div>
+              <p class="precio-total">TOTAL: $350.000</p>
+              <div class="botones-compra">
+                <button onclick="window.location.href='/'">Regresar</button>
+                <button>Finalizar compra</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </div>
+    <%- include('../partials/footer') %>
+  </body>
+</html>

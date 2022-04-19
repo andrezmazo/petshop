@@ -1,0 +1,346 @@
+@import url("./global.css");
+
+/* MAIN///////////////////////////////// */
+
+.imgMain {
+  outline-style: solid #ebebeb;
+  border-radius: 15px;
+  margin: auto;
+  text-align: center;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.contenedor-foto {
+  height: 70%;
+  max-width: 100%;
+  padding: 20px;
+}
+
+.mainSection {
+  display: flex;
+  margin: auto;
+  width: 80%;
+  border: 3px solid white;
+  border-radius: 15px;
+  padding: 10px;
+  background-color: white;
+  box-shadow: 2px 4px 22px -6px #000000;
+  flex-direction: column;
+  min-height: 560px;
+}
+
+.mainFoto {
+  padding-right: 1vw;
+  padding-left: 1vw;
+  margin: auto;
+  width: 40%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.mainArticle {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 60%;
+}
+.tituloProducto {
+  font-family: "Montserrat", sans-serif;
+  font-size: 25px;
+  font-weight: 800;
+  width: 100%;
+  text-align: center;
+}
+.priceMain {
+  font-family: "Montserrat", sans-serif;
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.precio-disponibilidad {
+  display: flex;
+  align-items: center;
+}
+.disponible {
+  font-size: 15px;
+}
+.descripcionMain {
+  padding-bottom: 5vh;
+  flex-wrap: wrap;
+  font-size: 20px !important;
+}
+.color {
+  font-size: 2vw;
+}
+.circulo1 {
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgb(255, 189, 66);
+  background-color: rgb(255, 189, 66);
+  border-radius: 50%;
+  margin-left: 1vw;
+  margin-right: 1vw;
+}
+.circulo2 {
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgb(0, 197, 204);
+  background-color: rgb(0, 197, 204);
+  border-radius: 50%;
+}
+.circulo3 {
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgb(255, 1, 170);
+  background-color: rgb(255, 1, 170);
+  border-radius: 50%;
+  margin-left: 1vw;
+  margin-right: 1vw;
+}
+.cajaColores {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.imgVistas {
+  display: flex;
+  flex-wrap: wrap;
+  height: 30%;
+  width: 30vw;
+}
+.imgVista {
+  margin: auto;
+  width: 8vw;
+  border: #ebebeb solid 5px;
+  border-radius: 15px;
+}
+
+.anadirCaja {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-around;
+}
+.botonAnadirGrande {
+  flex-grow: 6;
+  color: white;
+  border-radius: 15px;
+  height: 30px;
+  background-color: var(--naranja2);
+  border: 1px solid var(--naranja2);
+  cursor: pointer;
+}
+.menosUno,
+.masUno {
+  flex-grow: 2;
+  border-radius: 15px;
+  background-color: var(--naranja2);
+  border: 1px solid var(--naranja2);
+  margin-left: 1vw;
+  margin-right: 1vw;
+  font-weight: 800;
+  color: white;
+}
+.cantidad {
+  flex-grow: 1;
+  width: 10%;
+}
+
+/* PRODUCTOS SIMILARES /////////////////////////////////// */
+.tituloProductos {
+  padding-top: 20px;
+  font-size: 20px;
+  text-align: center;
+}
+.wrapper-productos {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.carta-producto {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 6px 3px rgba(68, 68, 68, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 320px;
+  overflow: hidden;
+  width: 230px;
+  margin: 15px;
+}
+
+.carta-producto .imagen-producto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50%;
+  padding: 5%;
+  width: 100%;
+}
+.carta-producto .info-producto {
+  height: 50%;
+  padding: 5% 2%;
+  width: 100%;
+}
+
+.carta-producto .detalles-agregar {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 50%;
+}
+
+.carta-producto img {
+  border-radius: 10px;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.detalles-agregar {
+  margin-top: 10px;
+}
+
+.info-producto .nombre-producto {
+  color: var(--negro);
+  font-size: 18px;
+  text-align: center;
+}
+
+.info-producto .precio-producto {
+  color: var(--negro);
+  font-size: 20px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.mas-detalles {
+  background-color: var(--magenta);
+  border: 1px solid var(--magenta);
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  padding: 5px;
+}
+.agregar {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.agregar p {
+  text-align: center;
+}
+
+.botones-agregar {
+  display: flex;
+  flex-direction: row;
+}
+
+.botones-agregar button {
+  aspect-ratio: 1/1;
+  background-color: var(--naranja2);
+  border: 1px solid var(--naranja2);
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-weight: 800;
+  margin: 0 2px;
+  width: 20px;
+}
+
+.cantidad-agregada {
+  border: 1px solid var(--negro);
+  margin: 2px 0;
+  width: 25px;
+}
+
+.boton-comprar {
+  align-items: center;
+  background-color: var(--naranja2);
+  cursor: pointer;
+  display: flex;
+  height: 20%;
+  justify-content: center;
+}
+
+.boton-comprar button {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  height: 100%;
+  font: inherit;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+@media (min-width: 720px) {
+  section .productosSimilares {
+    flex-wrap: nowrap;
+  }
+  article {
+    width: 17vw;
+  }
+  .cajaRegister {
+    width: 40%;
+  }
+  .loginCaja {
+    width: 40%;
+  }
+  .wrapper-productos {
+    justify-content: start;
+  }
+  .tituloProducto {
+    font-size: 35px;
+  }
+  .tituloProductos {
+    padding-top: 20px;
+    font-size: 2.5vw;
+    text-align: start;
+  }
+  .descripcionMain {
+    font-size: 2vw;
+  }
+  .mainSection {
+    flex-direction: row;
+  }
+  .mainArticle {
+    width: 100vw;
+  }
+  .priceMain {
+    font-size: 3vw;
+  }
+  .disponible {
+    font-size: 2vw;
+  }
+}
+
+@media (max-width: 720px) {
+  .mainArticle {
+    width: 100%;
+  }
+  .color {
+    font-size: 12px;
+  }
+}
+
+.back {
+  background: linear-gradient(rgba(255, 115, 0, 0.726), transparent),
+    /* linear-gradient(to top left, lime, transparent), */
+      linear-gradient(to top right, rgba(0, 0, 255, 0.596), transparent);
+  background-blend-mode: screen;
+}

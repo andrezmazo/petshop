@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/global.css" />
+    <link rel="stylesheet" href="/css/userProfile.css" />
+
+    <title>Perfil del Usuario</title>
+  </head>
+  <body>
+    <%- include('../partials/header') %>
+    <div class="perfilUsuario-wrapper">
+      <section class="contenedor-section">
+        <div class="tarjeta-usuario">
+          <div class="linea-color">
+            <img
+              class="mainFoto"
+              src="/img/users/<%=infoUsuario.foto%>"
+              alt="Foto de Perfil"
+            />
+            <div class="contenedor-parrafo1">
+              <p class="parrafoUsuario" id="nombre-id">
+                <%=infoUsuario.id%>. <%=infoUsuario.nombre%>
+              </p>
+              <p class="parrafoUsuario"><%=infoUsuario.email%></p>
+            </div>
+          </div>
+          <div class="info-adicional">
+            <div class="info-titulo">
+              <p>Información General</p>
+            </div>
+            <div class="contenedor-parrafo">
+              <p class="parrafoBoldUsuario">Fecha de Nacimiento:</p>
+              <p class="parrafoUsuario"><%=infoUsuario.fecha%></p>
+            </div>
+            <div class="contenedor-parrafo">
+              <p class="parrafoBoldUsuario">Pais:</p>
+              <p class="parrafoUsuario"><%=infoUsuario.pais%></p>
+            </div>
+            <div class="contenedor-parrafo">
+              <p class="parrafoBoldUsuario">Ciudad:</p>
+              <p class="parrafoUsuario"><%=infoUsuario.ciudad%></p>
+            </div>
+            <div class="contenedor-parrafo">
+              <p class="parrafoBoldUsuario">Direccion:</p>
+              <p class="parrafoUsuario"><%=infoUsuario.direccion%></p>
+            </div>
+            <div class="contenedor-parrafo">
+              <p class="parrafoBoldUsuario">Tipo:</p>
+              <p class="parrafoUsuario">
+                <%=infoUsuario.admin ? 'Administrador' : 'Usuario'%>
+              </p>
+            </div>
+            <div class="contenedor-parrafo">
+              <p class="parrafoBoldUsuario">Autorización de Contenido:</p>
+              <p class="parrafoUsuario">
+                <%=infoUsuario.autoriza ? 'Si' : 'No'%>
+              </p>
+            </div>
+            <div>
+              <form action="/userProfile/<%=infoUsuario.id%>/editar/">
+                <button class="botonEditar" type="submit" class="editar">
+                  Editar
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <%- include('../partials/footer') %>
+  </body>
+</html>

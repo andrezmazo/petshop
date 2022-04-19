@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/global.css" />
+    <link rel="stylesheet" href="/css/productDetail.css" />
+    <link rel="stylesheet" href="/css/login.css" />
+    <title>Login</title>
+  </head>
+  <body>
+    <%- include('../partials/header') %>
+    <div class="login-wrapper">
+      <div class="loginCaja">
+        <form style="width: 100%" action="/login" method="POST">
+          <label class="tituloLogin" for="loginTit">Ingresa a tu Cuenta</label>
+          <input
+            class="barraInput"
+            type="text"
+            name="email"
+            id="email"
+            minlength=" 2"
+            placeholder="Ingresa tu email"
+            value="<%= locals.old && old.email %>"
+          />
+          <% if(locals.errors && errors.email){%>
+          <div style="color: red"><%= errors.email.msg %></div>
+          <%}%>
+          <input
+            class="barraInput"
+            type="password"
+            name="contrasena"
+            id="contrasena"
+            minlength=" 2"
+            placeholder="Ingresa tu Contraseña"
+          />
+          <label class="recordarCheckbox">
+            <input
+              type="checkbox"
+              name="recordarUsuario"
+              id="recordarUsuario"
+            />
+            Recordar mi usuario
+          </label>
+          <button class="enviarLogin" type="submit" style="color: white">
+            <a style="text-decoration: none; color: white">Ingresar</a>
+          </button>
+        </form>
+      </div>
+    </div>
+    <%- include('../partials/footer') %>
+  </body>
+</html>

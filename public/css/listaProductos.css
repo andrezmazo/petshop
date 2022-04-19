@@ -1,0 +1,368 @@
+@import url("./global.css");
+
+.listaProductos-wrapper {
+  display: flex;
+  justify-content: center;
+  min-height: 80vh;
+  padding: 0 1%;
+  margin-bottom: 50px;
+  max-width: 100vw;
+  width: 100%;
+  flex-direction: column;
+}
+
+.preview-producto {
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+}
+
+.preview-titulo {
+  width: 100%;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  height: 10%;
+  font-family: 20px;
+}
+
+.info-wrapper {
+  max-width: 60%;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+}
+
+.preview-info {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 90%;
+}
+
+.info-wrapper p {
+  display: block;
+  max-width: 100%;
+  margin-bottom: 5px;
+}
+
+.info-wrapper span {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  margin-right: 2px;
+}
+
+.imagen-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 40%;
+  width: 40%;
+}
+
+.imagen-wrapper img {
+  max-width: 100%;
+  max-height: 300px;
+  height: auto;
+}
+.formulario-creacion button,
+.crear-boton {
+  width: 90%;
+  height: 35px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  border-radius: 10px;
+  font-weight: 500;
+}
+
+.crear-boton {
+  background-color: var(--magenta);
+  margin-top: 20px;
+}
+
+.formulario-creacion button {
+  background-color: var(--grisOscuro);
+  margin-top: 9px;
+}
+
+.campos-formulario {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.campos-formulario > div {
+  width: 33%;
+  justify-content: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.formulario-creacion {
+  background-color: white;
+  width: 60%;
+  border-radius: 10px;
+  padding: 1%;
+  box-shadow: 0px 0px 6px 3px rgba(68, 68, 68, 0.3);
+}
+
+label {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+}
+
+input,
+select,
+textarea,
+label {
+  display: block;
+  margin-bottom: 10px;
+  width: 90%;
+}
+
+textarea {
+  resize: none;
+  height: 80px;
+}
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+}
+
+table {
+  width: 75%;
+  margin: 0;
+  border-spacing: 0 10px;
+}
+
+thead {
+  background-color: var(--magenta);
+  color: white;
+  font-family: "Montserrat", sans-serif;
+}
+
+td {
+  text-align: center;
+}
+
+thead td {
+  padding: 10px;
+}
+
+thead td:first-child {
+  border-radius: 10px 0 0 10px;
+}
+
+thead td:last-child {
+  border-radius: 0 10px 10px 0;
+}
+
+tbody td {
+  padding: 10px;
+  /* border: 1px solid var(--negro); */
+  border: none;
+  position: relative;
+}
+
+tbody > tr {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 6px 3px rgba(68, 68, 68, 0.3);
+}
+
+tbody td::before {
+  display: block;
+  content: "";
+  height: 60%;
+  width: 1px;
+  background-color: var(--grisOscuro);
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+tbody td:first-child::before {
+  width: 0.5px;
+}
+
+tbody td:last-child::before {
+  display: none;
+}
+
+tbody td:first-child {
+  border-radius: 10px 0 0 10px;
+}
+tbody td:last-child {
+  border-radius: 0 10px 10px 0;
+}
+
+tbody tr:hover {
+  background-color: var(--naranja3);
+}
+
+.negrita {
+  font-weight: 800;
+}
+
+.descripcion {
+  text-align: justify;
+}
+
+.botones {
+  border: none;
+}
+
+.botones.no-mobile button,
+.botones.no-desktop button {
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  height: 35px;
+  margin: 5px 0;
+  width: 100%;
+}
+.botones.no-mobile button {
+  width: 100%;
+}
+.botones.no-desktop button {
+  width: 60%;
+  margin: 5px 10px;
+}
+
+.editar {
+  background-color: var(--magenta);
+}
+
+.eliminar {
+  background-color: var(--grisOscuro);
+}
+
+.no-desktop {
+  display: none;
+}
+
+.idProducto {
+  font-size: 25px;
+}
+
+@media (max-width: 820px) {
+  .preview-producto {
+    flex-direction: column;
+  }
+
+  .info-wrapper {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 10px;
+  }
+
+  .botones-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+  .botones-mobile {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    background-color: white;
+    border-top: 1px solid var(--grisOscuro);
+    display: flex;
+    flex-direction: row;
+  }
+  .formulario-creacion {
+    width: 95%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  form {
+    width: 100%;
+  }
+
+  .campos-formulario {
+    flex-direction: column;
+  }
+
+  .campos-formulario > div {
+    width: 100%;
+  }
+  .no-mobile {
+    display: none;
+  }
+  thead td:first-child {
+    border-radius: 0;
+  }
+
+  table {
+    width: 95%;
+  }
+  tbody > tr {
+    box-shadow: none;
+    height: 80px;
+    /* pointer-events: none; */
+    z-index: 20;
+  }
+
+  tbody > tr:nth-child(even) {
+    position: relative;
+    top: -10px;
+    height: 70px;
+  }
+
+  tbody > tr:nth-child(even)::before {
+    display: block;
+    content: "";
+    width: 80%;
+    height: 1px;
+    background-color: var(--grisOscuro);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  tbody td:first-child,
+  tbody td:last-child {
+    border-radius: 0;
+  }
+
+  tbody td::before {
+    display: none;
+  }
+  .no-desktop-tr {
+    display: table-row;
+    border-radius: 0;
+    text-align: center;
+    background-color: white !important;
+  }
+  .no-desktop > td {
+    display: table-cell;
+    width: 100%;
+  }
+
+  .no-desktop.crear-boton {
+    display: block;
+  }
+
+  .crear-boton {
+    width: 100%;
+  }
+
+  input,
+  select,
+  textarea,
+  label {
+    width: 100%;
+  }
+}

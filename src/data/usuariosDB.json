@@ -1,0 +1,71 @@
+[
+ {
+  "id": 1,
+  "admin": true,
+  "nombre": "andy test",
+  "email": "apatinoc4@gmail.com",
+  "fecha": "1993-12-21",
+  "pais": "colombia",
+  "ciudad": "medellin",
+  "direccion": "Cra75 DA #2Bsur 50 Mota Campestre casa 9814",
+  "autorizacion": "on",
+  "contrasena": "$2a$10$F8XkmMPlibuvq8bI26hqMOvhq0b3bpGqMuTQkw3VNQu4ZScs.TUki",
+  "foto": "foto-1647405203728.jpeg",
+  "autoriza": true
+ },
+ {
+  "id": 2,
+  "nombre": "usuario test",
+  "email": "apatinoddc4@gmail.com",
+  "fecha": "1992-12-12",
+  "pais": "colombia",
+  "ciudad": "medellin",
+  "direccion": "Cra75 DA #2Bsur 50 Mota Campestre casa 9814",
+  "tipo": "administrador",
+  "contrasena": "$2a$10$uAJ50vToZ/nl5vquDgAdkurnuCAIk1HuoprIwAnpChYlBZNw8emEm",
+  "foto": "foto-1647402865382.jpeg",
+  "autoriza": true,
+  "admin": false
+ },
+ {
+  "id": 4,
+  "nombre": "Andres Mazo",
+  "email": "andrez.mazo@gmail.com",
+  "fecha": "1111-11-11",
+  "pais": "colombia",
+  "ciudad": "medellin",
+  "direccion": "Calle 123",
+  "contrasena": "$2a$10$d22LPm3Zye1OD/WPUVGQLeIrbMrZrwp0inaNIREpIByfwIl9Zc.zu",
+  "foto": "foto-1647784341702.png",
+  "autoriza": true,
+  "admin": true
+ },
+ {
+  "id": 3,
+  "nombre": "usuario test",
+  "email": "apatinozzzc4@gmail.com",
+  "fecha": "1992-12-22",
+  "pais": "colombia",
+  "ciudad": "medellin",
+  "direccion": "Cra75 DA #2Bsur 50 Mota Campestre casa 9814",
+  "tipo": "administrador",
+  "contrasena": "$2a$10$t6d4peEMJcWBXOPUZwBChOt/PgDZwrac/5cxraOqg8oHdKf.qZNVu",
+  "foto": "foto-1647405664786.jpg",
+  "autoriza": true,
+  "admin": true
+ },
+ {
+  "id": 4,
+  "nombre": "Andres ",
+  "email": "hola@gmail.com",
+  "fecha": "1111-11-11",
+  "pais": "colombia",
+  "ciudad": "colombia",
+  "direccion": "fasdfasdfsfa",
+  "autorizacion": "on",
+  "contrasena": "$2a$10$xBSKD3UoRtB.4MLSSFcqI.1Wnevpxi4svFuQJdlOZGky47WtwpyTy",
+  "foto": "foto-1648525775855.png",
+  "autoriza": true,
+  "admin": true
+ }
+]
